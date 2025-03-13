@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Rent{% endblock %}
+
+{% block Content %}
+
+
+<div>
+    <!-- to display user's bookings -->
+     <br><br>
+    <h3 class="mt-5">Welcome {{ user.username }}, below are your bookings.</h3>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Phone Number</th>
+                <th>Email</th>
+                <th>House Type</th>
+                <th>Location</th>
+                <th>Apartment Name</th>
+                <th>Monthly Cost (KES)</th>
+                <th>Date Booked</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for rental in rentals %}
+            <tr>
+                <td>{{ rental.name }}</td>
+                <td>{{ rental.phone_number }}</td>
+                <td>{{ rental.email }}</td>
+                <td>{{ rental.house_type }}</td>
+                <td>{{ rental.location }}</td>
+                <td>{{ rental.apartment_name }}</td>
+                <td>{{ rental.monthly_cost }}</td>
+                <td>{{ rental.created_at|date:"F j, Y H:i" }}</td>
+                <td><strong>{{ rental.status }}</strong></td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="8" class="text-center">No bookings found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+{% endblock %}

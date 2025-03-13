@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Rent{% endblock %}
+
+{% block Content %}
+<br><br>
+<div class="container mt-5">
+    <h2>Rent a House</h2>
+
+    <!-- Display success or error messages -->
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <form id="rentForm" method="post" action="{% url 'myapp:pay' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="button" class="btn btn-primary" onclick="confirmSubmission()">Submit</button>
+    </form>
+</div>
+
+<!-- JavaScript for Popup Confirmation -->
+<script>
+    function confirmSubmission() {
+        var userName = "{{ request.user.first_name|default:'User' }}";  // Get logged-in user's name
+        var confirmation = confirm(`Hey ${userName}, thank you for applying for our rental service. Kindly click OK to confirm. You will be prompted to pay the deposit fee via Mpesa. Thank you.`);
+        
+        if (confirmation) {
+            document.getElementById("rentForm").submit();  // Submit the form if user confirms
+        }
+    }
+</script>
+
+{% endblock %}

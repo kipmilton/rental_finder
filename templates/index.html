@@ -1,0 +1,615 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+
+{% block Content %}
+
+
+<body class="index-page">
+
+  
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+
+      <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+        
+        <div class="carousel-item active">
+          <img src="{% static 'assets/img/hero-carousel/hero-carousel-1.jpg' %}" alt="">
+          <div class="carousel-container">
+            <div>
+              <p>Kahawa Wendani.</p>
+              <h2><span>368</span> Thika Rd</h2>
+              <a href="{% url 'myapp:home_page' %}#real-estate" class="btn-get-started">Rent | Ksh. 9, 000</a>
+            </div>
+          </div>
+        </div><!-- End Carousel Item -->
+
+        <div class="carousel-item">
+          <img src="{% static 'assets/img/hero-carousel/hero-carousel-2.jpg' %}" alt="">
+          <div class="carousel-container">
+            <div>
+              <p>Kahawa Sukari.</p>
+              <h2><span>247</span> Huruma Apt.</h2>
+              <a href="{% url 'myapp:home_page' %}#real-estate" class="btn-get-started">Rent | Ksh. 7, 500</a>
+            </div>
+          </div>
+        </div><!-- End Carousel Item -->
+
+        <div class="carousel-item">
+          <img src="{% static 'assets/img/hero-carousel/hero-carousel-3.jpg' %}" alt="">
+          <div class="carousel-container">
+            <div>
+              <p>Kenyatta market.</p>
+              <h2><span>301</span> Utulivu Est.</h2>
+              <a href="{% url 'myapp:home_page' %}#real-estate" class="btn-get-started">Rent | Ksh. 9, 000</a>
+            </div>
+          </div>
+        </div><!-- End Carousel Item -->
+        <div class="carousel-item">
+          <img src="{% static 'assets/img/hero-carousel/hero-carousel-4.jpg' %}" alt="">
+          <div class="carousel-container">
+            <div>
+              <p>Kahawa gardens.</p>
+              <h2><span>301</span> upendo apartments.</h2>
+              <a href="{% url 'myapp:home_page' %}#real-estate" class="btn-get-started">Rent | Ksh. 7, 000</a>
+            </div>
+          </div>
+        </div><!-- End Carousel Item -->
+
+        <a class="carousel-control-prev" href="{% url 'myapp:home_page' %}#hero-carousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
+
+        <a class="carousel-control-next" href="{% url 'myapp:home_page' %}#hero-carousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
+
+        <ol class="carousel-indicators"></ol>
+
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- Services Section --> 
+    <section id="services" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Welcome to ValleyHostels</h2>
+        <p>ValleyHostels provides affordable and convenient student rentals near Kenyatta University, ensuring a comfortable and secure living experience.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-house-door"></i>
+              </div>
+              <a href="{% url 'myapp:home_page' %}#real-estate" class="stretched-link">
+                <h3>Affordable Student Rentals</h3>
+              </a>
+              <p>We offer single rooms, bedsitters, one-bedroom, two-bedroom and three-bedroom->
+            
+                room units at budget-friendly prices with essential amenities.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-geo-alt"></i>
+              </div>
+              <a href="{% url 'myapp:home_page' %}#real-estate" class="stretched-link">
+                <h3>Prime Location</h3>
+              </a>
+              <p>Our properties are strategically located near Kenyatta University, offering easy access to campus, shopping centers, and transport.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-wifi"></i>
+              </div>
+              <a href="{% url 'myapp:home_page' %}#real-estate" class="stretched-link">
+                <h3>Free WiFi & Utilities</h3>
+              </a>
+              <p>Enjoy uninterrupted internet access and free water supply, ensuring a seamless student living experience.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-cash-stack"></i>
+              </div>
+              <a href="{% url 'myapp:home_page' %}#real-estate" class="stretched-link">
+                <h3>Flexible Payment Plans</h3>
+              </a>
+              <p>We offer affordable rent payment options, ensuring financial ease for students.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-person-check"></i>
+              </div>
+              <a href="{% url 'myapp:home_page' %}#real-estate" class="stretched-link">
+                <h3>24/7 Security</h3>
+              </a>
+              <p>Our premises are secured with CCTV surveillance and professional guards to ensure student safety.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-shield-check"></i>
+              </div>
+              <a href="{% url 'myapp:home_page' %}#services" class="stretched-link">
+                <h3>Reliable Management</h3>
+              </a>
+              <p>We provide responsive property management to ensure a hassle-free stay for all students.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+
+
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade">
+      <div class="heading">
+        <div class="container">
+          <div class="row d-flex justify-content-center text-center">
+            <div class="col-lg-8">
+              <h1>ValleyHostels</h1>
+              <p class="mb-0">Below are some of homes you can own or rent today, come visit us today and lets find a home unit that fit your dailly schedule.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav class="breadcrumbs">
+        <div class="container">
+          <ol>
+            <li><a href="{% url 'myapp:rent_house' %}">Home</a></li>
+            <li class="current">ValleyHostels</li>
+          </ol>
+        </div>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <!-- Real Estate Section -->
+     
+    <section id="real-estate" class="real-estate section">
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="card">
+              <img src="{% static 'assets/img/properties/property-1.jpg' %}" alt="" class="img-fluid">
+              <div class="card-body">
+                <span class="sale-rent">Rent | Ksh. 4,000</span>
+                <h3><a href="{% url 'myapp:rent_house' %}" class="stretched-link">Single Room - Kahawa Wendani</a></h3>
+                <div class="card-content d-flex flex-column justify-content-center text-center">
+                  <div class="row propery-info">
+                    <div class="col">Type</div>
+                    <div class="col">Water</div>
+                    <div class="col">WiFi</div>
+                  </div>
+                  <div class="row">
+                    <div class="col">Single Room</div>
+                    <div class="col">Included</div>
+                    <div class="col">Included</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Property Item -->
+
+          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="card">
+              <img src="{% static 'assets/img/properties/property-2.jpg' %}" alt="" class="img-fluid">
+              <div class="card-body">
+                <span class="sale-rent">Rent | Ksh. 6,000</span>
+                <h3><a href="{% url 'myapp:rent_house' %}" class="stretched-link">Bedsitter - Ruiru</a></h3>
+                <div class="card-content d-flex flex-column justify-content-center text-center">
+                  <div class="row propery-info">
+                    <div class="col">Type</div>
+                    <div class="col">Water</div>
+                    <div class="col">WiFi</div>
+                  </div>
+                  <div class="row">
+                    <div class="col">Bedsitter</div>
+                    <div class="col">Included</div>
+                    <div class="col">Included</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Property Item -->
+
+          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="card">
+              <img src="{% static 'assets/img/properties/property-3.jpg' %}" alt="" class="img-fluid">
+              <div class="card-body">
+                <span class="sale-rent">Rent | Ksh. 12,000</span>
+                <h3><a href="{% url 'myapp:rent_house' %}" class="stretched-link">One Bedroom - Kahawa Sukari</a></h3>
+                <div class="card-content d-flex flex-column justify-content-center text-center">
+                  <div class="row propery-info">
+                    <div class="col">Type</div>
+                    <div class="col">Water</div>
+                    <div class="col">WiFi</div>
+                  </div>
+                  <div class="row">
+                    <div class="col">One Bedroom</div>
+                    <div class="col">Included</div>
+                    <div class="col">Included</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Property Item -->
+
+          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="card">
+              <img src="{% static 'assets/img/properties/property-4.jpg' %}" alt="" class="img-fluid">
+              <div class="card-body">
+                <span class="sale-rent">Rent | Ksh. 6,000</span>
+                <h3><a href="{% url 'myapp:rent_house' %}" class="stretched-link">Two Bedroom - Githurai 45</a></h3>
+                <div class="card-content d-flex flex-column justify-content-center text-center">
+                  <div class="row propery-info">
+                    <div class="col">Type</div>
+                    <div class="col">Water</div>
+                    <div class="col">WiFi</div>
+                    <div class="col">electricity</div>
+                  </div>
+                  <div class="row">
+                    <div class="col">Two Bedroom</div>
+                    <div class="col">Included</div>
+                    <div class="col">Included</div>
+                    <div class="col">Included</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Property Item -->
+          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="card">
+              <img src="{% static 'assets/img/properties/property-5.jpg' %}" alt="" class="img-fluid">
+              <div class="card-body">
+                <span class="sale-rent">Rent | Ksh. 4,500</span>
+                <h3><a href="{% url 'myapp:rent_house' %}" class="stretched-link">One Bedroom - Githurai 44</a></h3>
+                <div class="card-content d-flex flex-column justify-content-center text-center">
+                  <div class="row propery-info">
+                    <div class="col">Type</div>
+                    <div class="col">Water</div>
+                    <div class="col">WiFi</div>
+                    <div class="col">electricity</div>
+                  </div>
+                  <div class="row">
+                    <div class="col">Two Bedroom</div>
+                    <div class="col">Included</div>
+                    <div class="col">Included</div>
+                    <div class="col">Included</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Property Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Real Estate Section -->
+
+    <section id="buy-rent" class="services section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Renting Procedure</h2>
+        <p>Follow these simple steps to secure your rental.</p>
+      </div><!-- End Section Title -->
+    
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-cart-check"></i>
+              </div>
+              <h3>How It Works</h3>
+              <ul>
+                <li>Click on the Button 'Rent'.</li>
+                <li>You will be redirected to booking page, fill it.</li>
+                <li>Our agent will arrange a site visit and brief you on the rental process.</li>
+                <li>Incase of anithing, Click on the 'Talk to Us' button below to send us an email</li>
+              </ul>
+              <div class="text-center">
+                <a href="mailto:kipmilton71@gmail.com?subject=RENT%20PROPERTY" class="buy-btn">Talk to Us!</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade">
+      <div class="heading">
+        <div class="container">
+          <div class="row d-flex justify-content-center text-center">
+            <div class="col-lg-8">
+              <h1>Single Gated Property </h1>
+              <p class="mb-0">Want one of our gated homes? look no more, we got you covered.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav class="breadcrumbs">
+        <div class="container">
+          <ol>
+            <li><a href="{% url 'myapp:rent_house' %}">Home</a></li>
+            <li class="current">Single Property</li>
+          </ol>
+        </div>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <!-- Real Estate 2 Section -->
+    <section id="real-estate-2" class="real-estate-2 section">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="portfolio-details-slider swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "navigation": {
+                "nextEl": ".swiper-button-next",
+                "prevEl": ".swiper-button-prev"
+              },
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              }
+            }
+          </script>
+          <div class="swiper-wrapper align-items-center">
+
+            <div class="swiper-slide">
+              <img src="{% static 'assets/img/property-slide/property-slide-1.jpg' %}" alt="">
+            </div>
+
+            <div class="swiper-slide">
+              <img src="{% static 'assets/img/property-slide/property-slide-2.jpg' %}" alt="">
+            </div>
+
+            <div class="swiper-slide">
+              <img src="{% static 'assets/img/property-slide/property-slide-3.jpg' %}" alt="">
+            </div>
+
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+        <div class="row justify-content-between gy-4 mt-4">
+
+          <div class="col-lg-8" data-aos="fade-up">
+            <div class="portfolio-description">
+              <h2>Secure Your Gated Two-Bedroom Home in Kahawa Wendani</h2>
+              <p>
+                Discover modern and affordable living with our gated two-bedroom homes in <strong>Kahawa Wendani</strong>. Strategically located near essential amenities and just a short distance from Nairobi CBD, these homes offer security, convenience, and comfort at competitive prices.
+              </p>
+              <p>
+                Our homes feature spacious interiors, high-quality finishes, and well-designed layouts to cater to your lifestyle needs. Enjoy ample parking, 24/7 security, and reliable water and internet connections in a serene, well-managed environment.
+              </p>
+              <p>
+                Whether you're looking for a cozy home for your family or a secure investment opportunity, our properties in Kahawa Wendani are designed to meet your expectations. Flexible payment plans are available to make homeownership accessible to you.
+              </p>
+              <p>
+                Don’t miss this chance to own a beautiful two-bedroom home in a prime location. Make a smart investment today and experience a secure, modern lifestyle.
+              </p>
+        
+              <div class="testimonial-item">
+                <p>
+                  <span>“Finding a home in Kahawa Wendani was made easy thanks to this project. The security and convenience are exactly what I needed. Highly recommended!”</span>
+                </p>
+                <div>
+                  <img src="{% static 'assets/img/testimonials/testimonials-2.jpg' %}" class="testimonial-img" alt="">
+                  <h3>James Otieno</h3>
+                  <h4>Happy Homeowner</h4>
+                </div>
+              </div>
+            </div><!-- End Portfolio Description -->
+        
+          </div>
+        
+          <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="portfolio-info">
+              <h3>Quick Summary</h3>
+              <ul>
+                <li><strong>Property ID:</strong> KW2001</li>
+                <li><strong>Location:</strong> Kahawa Wendani, Nairobi</li>
+                <li><strong>Property Type:</strong> Gated Two-Bedroom Home</li>
+                <li><strong>Status:</strong> For Sale</li>
+                <li><strong>Area:</strong> <span>120m <sup>2</sup></span></li>
+                <li><strong>Beds:</strong> 2</li>
+                <li><strong>Baths:</strong> 2</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        
+
+      </div>
+
+    </section><!-- /Real Estate 2 Section -->
+
+
+
+
+    <!-- Testimonials Section -->
+<section id="testimonials" class="testimonials section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>What Students Say About Us</h2>
+    <p>Hear from Kenyatta University students who have stayed in our off-campus rental hostels.</p>
+  </div><!-- End Section Title -->
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="swiper init-swiper">
+      <script type="application/json" class="swiper-config">
+        {
+          "loop": true,
+          "speed": 600,
+          "autoplay": {
+            "delay": 5000
+          },
+          "slidesPerView": "auto",
+          "pagination": {
+            "el": ".swiper-pagination",
+            "type": "bullets",
+            "clickable": true
+          },
+          "breakpoints": {
+            "320": {
+              "slidesPerView": 1,
+              "spaceBetween": 40
+            },
+            "1200": {
+              "slidesPerView": 3,
+              "spaceBetween": 1
+            }
+          }
+        }
+      </script>
+      <div class="swiper-wrapper">
+
+        <!-- Testimonial from a Student -->
+        <div class="swiper-slide">
+          <div class="testimonial-item">
+            <div class="stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p>
+              "The best student housing experience I've had! The environment is peaceful, and the security is top-notch. Perfect for studying and relaxing after classes."
+            </p>
+            <div class="profile mt-auto">
+              <img src="{% static 'assets/img/testimonials/student-1.jpg' %}" class="testimonial-img" alt="">
+              <h3>Brian Kiptoo</h3>
+              <h4>Fourth-Year Student, Kenyatta University</h4>
+            </div>
+          </div>
+        </div><!-- End testimonial item -->
+
+        <!-- Testimonial from another Student -->
+        <div class="swiper-slide">
+          <div class="testimonial-item">
+            <div class="stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p>
+              "Affordable, clean, and well-managed. The internet is fast, and the landlords are responsive. I highly recommend these hostels for any student looking for off-campus housing!"
+            </p>
+            <div class="profile mt-auto">
+              <img src="{% static 'assets/img/testimonials/student-2.jpg' %}" class="testimonial-img" alt="">
+              <h3>Angela Wanjiku</h3>
+              <h4>Third-Year Student, Kenyatta University</h4>
+            </div>
+          </div>
+        </div><!-- End testimonial item -->
+
+        <!-- Testimonial from another Student -->
+        <div class="swiper-slide">
+          <div class="testimonial-item">
+            <div class="stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p>
+              "Great location close to campus, and the rent is reasonable for students. The rooms are spacious, and the community is friendly. I would definitely stay here again!"
+            </p>
+            <div class="profile mt-auto">
+              <img src="{% static 'assets/img/testimonials/student-3.jpg' %}" class="testimonial-img" alt="">
+              <h3>Kevin Otieno</h3>
+              <h4>Second-Year Student, Kenyatta University</h4>
+            </div>
+          </div>
+        </div><!-- End testimonial item -->
+
+        <!-- Testimonial from another Student -->
+        <div class="swiper-slide">
+          <div class="testimonial-item">
+            <div class="stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p>
+              "I was worried about moving off-campus, but this hostel made the transition smooth. Reliable water and electricity, and the landlord is always available to help!"
+            </p>
+            <div class="profile mt-auto">
+              <img src="{% static 'assets/img/testimonials/student-4.jpg' %}" class="testimonial-img" alt="">
+              <h3>Esther Njoki</h3>
+              <h4>First-Year Student, Kenyatta University</h4>
+            </div>
+          </div>
+        </div><!-- End testimonial item -->
+
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+  </div>
+
+</section><!-- /Testimonials Section -->
+
+
+
+
+  </main>
+
+  
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+
+  <!-- Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+{% endblock %}

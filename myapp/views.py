@@ -6,12 +6,10 @@ from django.contrib.auth.models import User
 from django.contrib.auth import logout
 #restrict users to login
 from django.contrib.auth.decorators import login_required
-# accounts/views.py
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 import requests
-
 from myapp.credentials import LipanaMpesaPpassword, MpesaAccessToken
 from myapp.models import Rental
 from .forms import RentalForm
@@ -39,7 +37,7 @@ def login_page(request):
 def logout_user(request):
     """Logs out the user and redirects to login page."""
     logout(request)
-    return redirect('myapp:login_page')  # Redirect user after logout
+    return redirect('myapp:login_page')  
 
 def login_page(request):
     """Login view"""
@@ -69,7 +67,7 @@ def register(request):
                 user = User.objects.create_user(username=username, password=password)
                 user.save()
                 messages.success(request, "Account created successfully.")
-                return redirect('myapp:login_page')  # Redirect to the login page after successful registration
+                return redirect('myapp:login_page')  
             except Exception as e:
                 messages.error(request, f"Error: {str(e)}")
         else:
@@ -81,7 +79,7 @@ def register(request):
 
 @login_required
 def my_list(request):
-    user_rentals = Rental.objects.filter(user=request.user)  # Filter bookings for the logged-in user
+    user_rentals = Rental.objects.filter(user=request.user)  
     return render(request, 'my_list.html', {'rentals': user_rentals})  
 
 
@@ -94,7 +92,7 @@ def rent_house(request):
             rental.user = request.user  
             rental.save()
             messages.success(request, "House booking submitted successfully!")
-            return redirect('myapp:payment_page')  # Redirect to payment page
+            return redirect('myapp:payment_page') 
         else:
             messages.error(request, "Invalid form submission. Please check your inputs.")
     else:
@@ -102,21 +100,25 @@ def rent_house(request):
     
     return render(request, 'rent.html', {'form': form})
 
+@login_required
+def pay(request):
+    """ Renders the form to pay """
+    storage = messages.get_messages(request)
+    for _ in storage: 
+        pass
+    return render(request, 'pay.html')
+
+
+
 
 from django.contrib.admin.views.decorators import staff_member_required
 
-@staff_member_required  # Restricts access to admin users
+@staff_member_required  
 def admin_dashboard(request):
-    rentals = Rental.objects.all()  # Fetch all rental applications
+    rentals = Rental.objects.all()  
     return render(request, 'admin_dashboard.html', {'rentals': rentals})
 
-# @staff_member_required
-# def update_status(request, rental_id, status):
-#     rental = Rental.objects.get(id=rental_id)
-#     rental.status = status
-#     rental.save()
-#     messages.success(request, f"Application status updated to {status}.")
-#     return redirect('admin_dashboard')  # Redirect to admin dashboard
+
 
 
 from django.shortcuts import get_object_or_404, redirect
@@ -126,7 +128,7 @@ from .models import Rental
 def update_status(request, rental_id, new_status):
     rental = get_object_or_404(Rental, id=rental_id)
 
-    if new_status in ['Accepted', 'Rejected', 'Pending']:  # Only valid status updates
+    if new_status in ['Accepted', 'Rejected', 'Pending']: 
         rental.status = new_status
         rental.save()
         messages.success(request, f"Status updated to {new_status}!")
@@ -134,15 +136,6 @@ def update_status(request, rental_id, new_status):
         messages.error(request, "Invalid status update.")
 
     return redirect('myapp:admin_dashboard')
-
-# Adding the mpesa functions
-
-def pay(request):
-    """ Renders the form to pay """
-    storage = messages.get_messages(request)
-    for _ in storage: 
-        pass
-    return render(request, 'pay.html')
 
 
 
